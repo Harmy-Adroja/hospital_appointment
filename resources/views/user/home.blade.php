@@ -36,13 +36,13 @@
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make your life happier</span>
         <h1 class="display-4">Healthy Living</h1>
-        <a href="#" class="btn btn-primary">Let's Consult</a>
+        <!-- <a href="#" class="btn btn-primary">Let's Consult</a> -->
       </div>
     </div>
   </div>
 
 
-  <div class="bg-light">
+  <!-- <div class="bg-light">
     <div class="page-section py-3 mt-md-n5 custom-index">
       <div class="container">
         <div class="row justify-content-center">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-    </div> <!-- .page-section -->
+    </div> .page-section -->
 
     <div class="page-section pb-0">
       <div class="container">
@@ -93,7 +93,7 @@
   </div> <!-- .bg-light -->
 
 @include('user.doctor')
-@include('user.news')
+
 @include('user.appointment')
 @include('layouts.user.footer')
 

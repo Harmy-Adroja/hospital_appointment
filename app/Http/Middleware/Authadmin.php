@@ -23,6 +23,7 @@ class Authadmin
             {
                 // return view('admin.add_doctor');
                 return $next($request);
+                
             }
             else
             {

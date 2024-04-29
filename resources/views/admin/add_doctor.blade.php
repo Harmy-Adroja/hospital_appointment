@@ -44,7 +44,7 @@
         <div class="container-fluid page-body-wrapper">
             
         <div class="container" align="center" style="padding-top: 50px;">
-
+       
             @if(session()->has('message'))
               <div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert">
@@ -53,10 +53,10 @@
                 {{session()->get('message')}}
               </div>  
             @endif
+            
 
-                <!-- <form action="{{route('upload_doctor')}}"  method="POST"  enctype="multipart/form-data"> -->
                   {!! Form::open([
-                    'route' => 'upload_doctor',
+                    'route' => 'doctor.store',
                     'method' => 'POST',
                     'enctype' => 'multipart/form-data'
                     ]) !!}
@@ -133,6 +133,7 @@
                   
                 <!-- </form> -->
                 {!!Form::close()!!}
+              
             </div>
         </div>
     @include('layouts.admin.script')  

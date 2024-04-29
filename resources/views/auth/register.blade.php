@@ -39,6 +39,30 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <!-- <div class="mt-4">
+                <x-jet-label for="usertype" value="{{ __('User Type') }}" />
+                <x-jet-input id="usertype" class="block mt-1 w-full" type="text" name="usertype" :value="old('usertype')" required />
+            </div> -->
+
+            @if(old('usertype') == 1)
+                @include('auth.role-selection')
+            @endif
+
+            <!-- @if(strpos(old('email'), '@hospital.com') !== false)
+                 @include('auth.role-selection')
+            @endif -->
+
+            <!-- <div class="mt-4">
+            <div class="form-group">
+            <x-jet-label for="roles">Role:</x-jet-label>
+            <select name="roles[]" id="roles" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" >
+            @foreach($roles as $key => $role)
+                <option value="{{ $role['name'] }}">{{ $role['name'] }}</option>
+            @endforeach
+            </select>
+            </div>
+            </div> -->
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-jet-label for="terms">

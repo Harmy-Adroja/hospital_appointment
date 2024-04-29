@@ -28,9 +28,9 @@
       <!-- partial -->
     @include('layouts.admin.navbar')
         <!-- partial -->
-
     <div class="table-responsive" style="overflow-x: auto;">
         <div align="center" style="padding-top:100px;">
+       
             <table>
                 <tr style="background-color:grey;">
                     <th style="width:10%;  padding:10px; font-size: 20px; color:white;">Patient name</th>
@@ -56,19 +56,21 @@
                     <td style="width:5%; padding:10px;  color:black;"><a href="{{url('/download',$appoint->attachment)}}">download</a></td>
                     <td style="width:5%; padding:10px;  color:black;">{{$appoint->status}}</td>
                     <td>
-                        <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Aprroved</a>
+                        <a class="btn btn-success" href="{{route('appointment.approve',$appoint->id)}}">Aprroved</a>
                     </td>
                     <td>
-                        <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">canceled</a>
+                        <a class="btn btn-danger" href="{{route('appointment.cancel',$appoint->id)}}">canceled</a>
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{url('emailview',$appoint->id)}}">Send Mail</a>
+                        <a class="btn btn-primary" href="{{route('email.show',$appoint->id)}}">Send Mail</a>
                     </td>
                 </tr>
                 @endforeach
             </table>
+          
         </div>
     </div>
+    
     @include('layouts.admin.script')
      
   </body>

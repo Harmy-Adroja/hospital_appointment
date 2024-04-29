@@ -27,14 +27,14 @@
       <div class="container">
         <a class="navbar-brand" href="{{url('/')}}"><span class="text-primary">One</span>-Health</a>
 
-        <form action="#">
+        <!-- <form action="#">
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
               <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
             </div>
             <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
           </div>
-        </form>
+        </form> -->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -48,11 +48,11 @@
             <li class="nav-item">
               <a class="nav-link" href="about.html">About Us</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="doctors.html">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">News</a>
+              <a class="nav-link" href="blog.html">News</a> -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -60,7 +60,7 @@
             @if(Route::has('login'))
             @auth
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{route('myappointment')}}">My Appointment</a>
+              <a class="btn btn-primary ml-lg-3" href="{{route('Myappointment.show')}}">My Appointment</a>
             </li>
             <x-app-layout>
             </x-app-layout>

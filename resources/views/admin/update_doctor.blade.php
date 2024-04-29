@@ -57,17 +57,10 @@
                 {{session()->get('message')}}
               </div>  
             @endif
-
-        
             
-
-            
-
-
-                <!-- <form action="{{route('editdoctor', $data->id)}}"  method="POST"  enctype="multipart/form-data"> -->
                 {!! Form::open
                 ([
-                  'route' => ['editdoctor', $data->id],
+                  'route' => ['doctor.update', $data->id],
                  'method' => 'POST', 
                  'enctype' => 'multipart/form-data'
                 ]) !!}
@@ -136,6 +129,7 @@
                      </div>
                   {!!Form::close()!!}
                 <!-- </form> -->
+              
             </div>
         </div>
     @include('layouts.admin.script')  

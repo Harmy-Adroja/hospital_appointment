@@ -9,6 +9,10 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -30,6 +34,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'phone',
         'address',
         'password',
+        'usertype',
     ];
 
     /**
@@ -61,4 +66,20 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // public function roles(): MorphToMany
+    // {
+    //     return $this->morphToMany(Role::class, 'model', 'model_has_roles');
+    // }
+
+    public function assignRoles(array $roles): void
+    {
+    // Retrieve role models based on role names
+    $roleModels = Role::whereIn('name', $roles)->get();
+
+    // Attach roles to the user
+    $this->roles()->sync($roleModels);
+    }
+
+    
 }

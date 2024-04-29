@@ -108,6 +108,8 @@
                                          @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
+
+                                
                             </form>
                         </x-slot>
                     </x-jet-dropdown>

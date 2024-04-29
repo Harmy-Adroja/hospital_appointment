@@ -28,9 +28,12 @@
       <!-- partial -->
     @include('layouts.admin.navbar')
         <!-- partial -->
+      
     <div class="container-fluid page-body-wrapper">
         <div align="center" style="padding:70px;">
-            <table>
+        
+        <table>
+       
                 <tr style="background-color:grey;">
                     <th style="padding:10px; font-size: 20px; color:white;">Doctor name</th>
                     <th style="padding:10px; font-size: 20px; color:white;">Phone</th>
@@ -40,24 +43,33 @@
                     <th style="padding:10px; font-size: 20px; color:white;">Delete</th>
                     <th style="padding:10px; font-size: 20px; color:white;">Update</th>
                 </tr>
+                
                 @foreach($data as $doctor)
                 <tr style="background-color:white;" align="center">
                     <td style="padding:10px;  color:black;">{{$doctor->name}}</td>
                     <td style="padding:10px;  color:black;">{{$doctor->phone}}</td>
                     <td style="padding:10px;  color:black;">{{$doctor->speciality}}</td>
                     <td style="padding:10px;  color:black;">{{$doctor->room}}</td>
+                    
                     <td style="padding:10px;  color:black;"><img src="doctorimage/{{$doctor->image}}" width= "50" height="50" alt="Doctor Image"></td>
                     <td>
-                        <a class="btn btn-danger" onclick="return confirm('are you sure to delete this')" href="{{url('deletedoctor',$doctor->id)}}">Delete</a>
+                        <a class="btn btn-danger" onclick="return confirm('are you sure to delete this')" href="{{route('doctor.delete',$doctor->id)}}">Delete</a>
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{url('updatedoctor',$doctor->id)}}">Update</a>
+                    
+                    
+                        <a class="btn btn-primary" href="{{route('doctor.edit',$doctor->id)}}">Update</a>
+                      
                     </td>
                 </tr>
                 @endforeach
-            </table>    
+                
+            </table> 
+           
+           
         </div>
     </div>
+
     @include('layouts.admin.script')   
   </body>
 </html>

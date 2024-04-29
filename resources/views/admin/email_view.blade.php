@@ -48,8 +48,8 @@
                 {{session()->get('message')}}
               </div>  
             @endif
-
-                <form action="{{url('sendemail',$data->id)}}"  method="POST" >
+            
+                <form action="{{route('sendemail',$data->id)}}"  method="POST" >
                   @csrf
                     <div style="padding:15px;">
                         <lable>Greetings</lable>
@@ -84,6 +84,7 @@
                         <input type="submit" class="btn btn-primary">
                     </div>
                 </form>
+             
             </div>
         </div>
     @include('layouts.admin.script')  

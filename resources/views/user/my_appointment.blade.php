@@ -35,7 +35,8 @@
             <td style="padding:10px;  color:black;">{{$appoints->date}}</td>
             <td style="padding:10px;  color:black;">{{$appoints->message}}</td>
             <td style="padding:10px;  color:black;">{{$appoints->status}}</td>
-            <td><a class="btn btn-danger" onclick="return confirm('are you sure want to delete this')" href="{{url('cancel_appoint',$appoints->id)}}">Cancel</a></td>
+            <td style="width:5%; padding:10px;  color:black;"><a href="{{ route('attachment.download', ['file' => $appoints->attachment]) }}">download</a></td>
+            <td><a class="btn btn-danger" onclick="return confirm('are you sure want to delete this')" href="{{route('appointment.delete',$appoints->id)}}">Cancel</a></td>
         </tr>
         @endforeach
     </table>

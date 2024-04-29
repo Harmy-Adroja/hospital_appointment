@@ -22,6 +22,7 @@ class MainAuth
         if(Auth::id())
         {
             if(Auth::user()->usertype=="0")
+           // if (strpos(Auth::user()->email, '@hospital.com') !== false)
             {
                
                 return $next($request);
@@ -39,3 +40,18 @@ class MainAuth
        
     }
 }
+
+// public function handle(Request $request, Closure $next)
+// {
+//     if (Auth::check()) {
+//         $email = Auth::user()->email;
+//         if (strpos($email, '@hospital.com') !== false && substr($email, -13) === "@hospital.com") {
+//             return response()->view('admin.home');
+//         } else {
+//             return $next($request);
+//         }
+//     } else {
+//         return redirect()->back();
+//     }
+// }
+// }
